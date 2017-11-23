@@ -1,0 +1,11 @@
+<div class="new-chat-link">{{#link-to 'chats.new'}}Send new Message{{/link-to}}</div>
+<ul>
+{{#each chats as |chat|}}
+<div class ="each-chat"> From: {{chat.from}} To: {{chat.to}}
+	<div>{{chat.text}}</div>
+</div>
+{{else}}
+<h1>NOP aun no</h1>
+{{/each}}
+</ul>
+{{outlet}}

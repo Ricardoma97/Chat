@@ -5,8 +5,23 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'chat-cli',
     environment,
+    contentSecurityPolicy:{'connect-scr':"'self' wws://*.firebaseio.com"}, 
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: 'AIzaSyAISepKqf94HbllXq4FyDruQ5vno0d_Dx0',
+      authDomain: 'chat-3b4d0.firebaseapp.com',
+      databaseURL: 'https://chat-3b4d0.firebaseio.com',
+      storageBucket: 'chat-3b4d0.appspot.com',
+     },
+   contentSecurityPolicy: {
+   'script-src': "'self' 'unsafe-eval' apis.google.com",
+   'frame-src': "'self' https://*.firebaseapp.com",
+   'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+ torii: {
+    sessionServiceName: 'session'
+  },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

@@ -1,5 +1,20 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
 {{!-- Feel free to remove this! --}}
-
+{{#if session.isAuthenticated}}
+<div>
+	{{#link-to 'inicio'}}Inicio{{/link-to}}
+	{{#link-to 'chats'}}Chats{{/link-to}}
+</div>
+{{/if}}
+<div class='container'>
+        <div class='navbar-right'>
+            {{#if session.isAuthenticated}}
+                <button
+                    class='btn btn-default navbar-btn'
+                    {{action 'signOut'}}>
+                     Sign Out
+                </button>
+            {{/if}}
+        </div>
+    </div>
 {{outlet}}
